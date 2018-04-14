@@ -74,6 +74,7 @@
 	<head>
 		<title>Admin Panel</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+		<link rel="stylesheet" href="../bootstrap/css/home.css"> 
         <script  src= "../js/jquery.js"> </script> 
         <script  src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> 
@@ -99,7 +100,7 @@
 				<img src="../<?php echo $rows['image']; ?>" width="100px">
 				<div class="form-group">
 					<label for="image">Upload an Image</label>
-					<input id="image" type="file" name="image" class="btn btn-primary">
+					<input id="image" type="file" name="image" class="btn btn-default">
 				</div>
 				<div class="form-group">
 					<label for="title">Title</label>
