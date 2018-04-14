@@ -13,18 +13,18 @@
 						$_SESSION['user_role']= $rows['user_role']; 
 						header( 'Location: profile/index.php'); 
 					} else { 
-						header('Location:index.php?login_error=wrong');
+						header('Location:homepage.php?login_error=wrong');
 
 					}
 				}
 				
 
 			} else {
-				header('Location:index.php?login_error=query_error'); 
+				header('Location:homepage.php?login_error=query_error'); 
 			}
 
 		} else {
-			header( 'Location:index.php?login_error=empty'); 
+			header( 'Location:homepage.php?login_error=empty'); 
 		}
 	} else {}
 
