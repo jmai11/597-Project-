@@ -95,7 +95,7 @@ $per_page = 5;
                 $total_pages = ceil($count/$per_page); 
 
                 for($i=1; $i<=$total_pages; $i++){
-                    echo '<li><a href="postlist?page='.$i.'">'.$i.'</a></li>'; 
+                    echo '<li><a href="postlist.php?page='.$i.'">'.$i.'</a></li>'; 
 
                 }
              ?>
