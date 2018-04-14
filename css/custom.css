@@ -1,0 +1,17 @@
+body {
+	margin: 0;
+	padding:0;
+	background: url(../../images/igor-ovsyannykov-355349-unsplash.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachmenet: fixed;
+	font-family: sans-serif;
+}
+
+.panel {
+	border:0px;
+	background: rgba(0,0,0,0.5);
+	color: #ffff;
+	text-align: center;
+	padding-top: 50px;
+}

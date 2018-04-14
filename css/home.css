@@ -1,0 +1,39 @@
+body{
+	background-color: #5A6066; 
+	margin: 0;
+	padding:0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachmenet: fixed;
+	color:#fffff;
+	font-family: sans-serif;
+}
+div {
+	background: #;
+}
+
+a:link {
+	color: #4A4B4D;
+}
+
+h4{
+	color: #8B8E91;
+}
+
+h2{
+	color: #8B8E91;
+}
+
+label {
+	color: #8B8E91;
+}
+
+
+.panel {
+	border:0px;
+	background:;
+	color: #8A8E85; 
+	text-align: ;
+	padding-top: 0px;
+	border-style: ;
+}
