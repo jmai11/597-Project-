@@ -3,24 +3,24 @@ Welcome to Community CMS
 
 Installation Instructions:
 
-Downloading the Source Code 
-•	Retrieve source code from https://github.com/jmai11/597-Project-
-•	A github account will need to be created in order to be able to download the source code. 
-•	Download the source code and save it into the htdocs folder of the Xampp application. (see Xampp installation)
+<b>Downloading the Source Code</b></br>
+•	Retrieve source code from https://github.com/jmai11/597-Project- </br>
+•	A github account will need to be created in order to be able to download the source code. </br>
+•	Download the source code and save it into the htdocs folder of the Xampp application. (see Xampp installation)</br>
 
-Downloading Xampp
+<b>Downloading Xampp</b>
 •	Go to: https://www.apachefriends.org/index.html
 •	Download the version specific for the platform that you are using. 
 •	Follow its installation guidelines. 
 •	Make sure that Apache Web Server and MySQL database are running. 
 
-Retrieving and Importing Data into Database
+<b>Retrieving and Importing Data into Database</b>
 •	In a web browser go to localhost/phpMyAdmin 
 •	Create a new database 
 •	Retrieve file: cms_community.sql from the SQL folder in the source code 
 •	Import this file into the database.
 
-Database Configuration
+<b>Database Configuration</b>
 •	In the source files, navigate to the database.php file. 
 •	There should be two files one in the main source file and one in the profile folder. 
 •	Change the variables to the parameters that you have for your database. 
