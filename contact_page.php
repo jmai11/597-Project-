@@ -3,8 +3,8 @@
 <?php include 'database.php'; 
     if(isset($_POST['submit_contact'])) {
         $date= date('Y-m-d h:i:s');
-        $ins_sql= "INSERT INTO contact (name, email, subject, comment, date) VALUES ('$_POST[name]', '$_POST[email]','$_POST[subject]','$_POST[comment]','$date')"; 
-        $run_sql = mysqli_query($conn, $ins_sql); 
+        $insert_sql= "INSERT INTO contact (name, email, subject, comment, date) VALUES ('$_POST[name]', '$_POST[email]','$_POST[subject]','$_POST[comment]','$date')"; 
+        $exec_sql = mysqli_query($connect, $insert_sql); 
     }
 
 ?>

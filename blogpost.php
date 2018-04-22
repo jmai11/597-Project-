@@ -15,9 +15,9 @@
             <article class="row"> 
                 <section class="col-lg-8">
                     <?php 
-                        $sel_sql = "SELECT * FROM blog_posts WHERE id='$_GET[post_id]'"; 
-                        $run_sql= mysqli_query($conn, $sel_sql);
-                        while($rows= mysqli_fetch_assoc($run_sql)) {
+                        $select_sql = "SELECT * FROM blog_posts WHERE id='$_GET[post_id]'"; 
+                        $exec_sql= mysqli_query($connect, $select_sql);
+                        while($rows= mysqli_fetch_assoc($exec_sql)) {
                             echo '<div class="panel panel-default">
                                     <div class="panel-body">
                                         <div class="panel-header">

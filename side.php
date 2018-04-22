@@ -33,9 +33,9 @@
                     <div class="panel-heading">Latest Posts</div>
                     <div class="list-group">
                         <?php 
-                            $sel_side= "SELECT * FROM blog_posts ORDER BY id DESC LIMIT 6"; 
-                            $run_side= mysqli_query($conn, $sel_side); 
-                            while ($rows = mysqli_fetch_assoc($run_side)) {
+                            $sel_sql= "SELECT * FROM blog_posts ORDER BY id DESC LIMIT 6"; 
+                            $exec_side= mysqli_query($connect, $sel_sql); 
+                            while ($rows = mysqli_fetch_assoc($exec_side)) {
                                 if (isset($_GET['post_id'])) {
                                     if($_GET['post_id']== $rows['id']) {
                 

@@ -7,11 +7,11 @@
 
         if($_POST['password'] == $_POST['confirm_password']) {
             $date= date('Y-m-d h:i:s');
-            $ins_sql= "INSERT INTO user (user_role, user_first, user_last, user_name, user_email, user_password, user_about, user_image date) VALUES ( 'subscriber','$_POST[fname]', '$_POST[lname]', '$_POST[username]', '$_POST[email]','$_POST[password]', '$_POST[aboutme]', 'null', '$date')"; 
-            $run_sql = mysqli_query($conn, $ins_sql); 
+            $insert_sql= "INSERT INTO user (user_role, user_first, user_last, user_name, user_email, user_password, user_about, user_image, date) VALUES ( 'subscriber','$_POST[fname]', '$_POST[lname]', '$_POST[username]', '$_POST[email]','$_POST[password]', '$_POST[aboutme]', '', '$date')"; 
+            $exec_sql = mysqli_query($connect, $insert_sql); 
 
         }else {
-            $confirm = '<div class="alert alert-danger">The passoword does not match!</div>';
+            $conf = '<div class="alert alert-danger">The passoword does not match!</div>';
 
         }
     }

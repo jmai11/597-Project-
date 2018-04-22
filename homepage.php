@@ -2,15 +2,15 @@
 <!--user login-->
 <?php session_start();
     include 'database.php'; 
-        $login_err =''; 
+        $login_error =''; 
     if(isset($_GET['login_error'])) {
         if($_GET['login_error'] =='empty') {
-            $login_err = '<div class="alert alert-danger"> Username or Password was empty!</div>'; 
+            $login_error = '<div class="alert alert-danger"> Username or Password was empty!</div>'; 
 
         } elseif($_GET['login_error'] =='wrong') {
-            $login_err = '<div class="alert alert-danger"> Username or Password was wrong!</div>'; 
+            $login_error = '<div class="alert alert-danger"> Username or Password was wrong!</div>'; 
         } elseif($_GET['login_error'] =='query_error') {
-            $login_err = '<div class="alert alert-danger"> Query or database issue!</div>'; 
+            $login_error = '<div class="alert alert-danger"> Query or database issue!</div>'; 
         }
     }
     
@@ -49,9 +49,9 @@
 			<!---body for blog posting-->
 
                     <?php
-                        $sel_sql = "SELECT * FROM blog_posts p JOIN user u ON p.author = u.user_email ORDER BY id DESC LIMIT $start_from, $per_page";
-                        $run_sql = mysqli_query($conn, $sel_sql); 
-                        while ($rows= mysqli_fetch_assoc($run_sql)) {
+                        $select_sql = "SELECT * FROM blog_posts p JOIN user u ON p.author = u.user_email ORDER BY id DESC LIMIT $start_from, $per_page";
+                        $exec_sql = mysqli_query($connect, $select_sql); 
+                        while ($rows= mysqli_fetch_assoc($exec_sql)) {
                           echo ' <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="text-capitalize"><strong><a href="blogpost.php?post_id='.$rows['id'].'">'.$rows['title'].'</a></strong></h4>
@@ -88,9 +88,9 @@
             <div class="text-center">
             <ul class="pagination">
             <?php 
-                $pagination_sql = "SELECT * FROM blog_posts"; 
-                $run_pagination = mysqli_query ($conn, $pagination_sql); 
-                $count = mysqli_num_rows($run_pagination); 
+                $pagin_sql = "SELECT * FROM blog_posts"; 
+                $exec_pagin = mysqli_query ($connect, $pagin_sql); 
+                $count = mysqli_num_rows($exec_pagin); 
 
                 $total_pages = ceil($count/$per_page); 
 
