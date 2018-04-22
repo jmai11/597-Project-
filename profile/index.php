@@ -3,15 +3,15 @@
 <?php session_start(); 
 	include 'database.php'; 
 	if(isset($_SESSION['user']) && isset($_SESSION['password']) == true) {
-		$sel_sql = "SELECT * FROM user WHERE user_email = '$_SESSION[user]' AND user_password = '$_SESSION[password]'"; 
-		if($run_sql = mysqli_query($conn, $sel_sql)) {
-			while($rows= mysqli_fetch_assoc($run_sql)) {
+		$select_sql = "SELECT * FROM user WHERE user_email = '$_SESSION[user]' AND user_password = '$_SESSION[password]'"; 
+		if($exec_sql = mysqli_query($connect, $select_sql)) {
+			while($rows= mysqli_fetch_assoc($exec_sql)) {
 				$user_first = $rows['user_first']; 
 				$user_last = $rows['user_last']; 
 				$user_email = $rows['user_email']; 
 				$user_about = $rows['user_about'];
 				$user_image = $rows['user_image']; 
-				if(mysqli_num_rows($run_sql)== 1) {
+				if(mysqli_num_rows($exec_sql)== 1) {
 					//if($rows['role'] == '') {
 
 					//} else {

@@ -13,8 +13,8 @@ $per_page = 5;
 //deleting post
     if(isset($_GET['delete_id'])) {
     	$delete_id = $_GET['delete_id']; 
-    	$sql = "DELETE FROM blog_posts WHERE id = '$delete_id'"; 
-    	if($run = mysqli_query($conn, $sql)) {
+    	$delete_sql = "DELETE FROM blog_posts WHERE id = '$delete_id'"; 
+    	if($exec = mysqli_query($connect, $delete_sql)) {
     		$result = '<div class="alert alert-danger">You have deleted Row no. '.$delete_id.' from Database</div>';
     	}
     }
@@ -24,7 +24,7 @@ $per_page = 5;
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Admin Panel</title>
+		<title>Post List</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 		<link rel="stylesheet" href="../bootstrap/css/home.css">  
         <script  src= "../js/jquery.js"> </script> 
@@ -58,9 +58,9 @@ $per_page = 5;
 							<tbody>
 								<?php 
 									//joining blog_post and user table
-									$sql = "SELECT * FROM blog_posts p JOIN user u ON p.author = u.user_email";
-									$run = mysqli_query ($conn, $sql); 
-									while ($rows = mysqli_fetch_assoc($run)) {
+									$select_sql = "SELECT * FROM blog_posts p JOIN user u ON p.author = u.user_email";
+									$exec = mysqli_query ($connect, $select_sql); 
+									while ($rows = mysqli_fetch_assoc($exec)) {
 										echo '  
 										<tr>
 											<td>'.$rows['id'].'</td>
@@ -88,9 +88,9 @@ $per_page = 5;
 			<ul class="pagination">
 			
 			<?php 
-                $pagination_sql = "SELECT * FROM blog_posts"; 
-                $run_pagination = mysqli_query ($conn, $pagination_sql); 
-                $count = mysqli_num_rows($run_pagination); 
+                $pagin_sql = "SELECT * FROM blog_posts"; 
+                $exec_pagin = mysqli_query ($connect, $pagin_sql); 
+                $count = mysqli_num_rows($exec_pagin); 
 
                 $total_pages = ceil($count/$per_page); 
 

@@ -5,6 +5,6 @@
 	$db= 'cms_community'; 
 
 
-	$conn = mysqli_connect ($server, $username, $password, $db);
+	$connect = mysqli_connect ($server, $username, $password, $db);
 
 ?>

@@ -1,15 +1,11 @@
 <?php session_start(); 
 	include 'database.php'; 
 	if(isset($_SESSION['user']) && isset($_SESSION['password']) == true) {
-		$sel_sql = "SELECT * FROM user WHERE user_email = '$_SESSION[user]' AND user_password = '$_SESSION[password]'"; 
-		if($run_sql = mysqli_query($conn, $sel_sql)) {
-			while($rows= mysqli_fetch_assoc($run_sql)) { 
-				if(mysqli_num_rows($run_sql) == 1) {
-					//if($rows['role'] == '') {
-
-					//} else {
-						//header('Location:../index.php');
-					//}
+		$select_sql = "SELECT * FROM user WHERE user_email = '$_SESSION[user]' AND user_password = '$_SESSION[password]'"; 
+		if($exec_sql = mysqli_query($connect, $select_sql)) {
+			while($rows= mysqli_fetch_assoc($exec_sql)) { 
+				if(mysqli_num_rows($exec_sql) == 1) {
+				
 				} else {
 					header('Location:../index.php');
 
@@ -38,8 +34,8 @@
 			if($image_size < 1000000) {
 				if ($image_ext == 'jpg' || $image_ext == 'png' || $image_ext == 'gif') {
 					if (move_uploaded_file($image_tmp,$image_path)){
-							$ins_sql = "INSERT INTO blog_posts (title, description, image, date, author) VALUES ('$title', '$_POST[description]', '$image_db_path', '$date', '$_SESSION[user]') "; 
-						if(mysqli_query($conn, $ins_sql)) {
+							$insert_sql = "INSERT INTO blog_posts (title, description, image, date, author) VALUES ('$title', '$_POST[description]', '$image_db_path', '$date', '$_SESSION[user]') "; 
+						if(mysqli_query($connect, $insert_sql)) {
 							header('Location:postlist.php'); 
 						} else {
 							$error = '<div class="alert alert-danger"> the query didnt work!</div>'; 
@@ -61,8 +57,8 @@
 		} else {
 
 			//creating post without image
-			$ins_sql = "INSERT INTO blog_posts (title, description, date, author) VALUES ('$title', '$_POST[description]', '$date', '$_SESSION[user]') "; 
-			if(mysqli_query($conn, $ins_sql)) {
+			$insert_sql = "INSERT INTO blog_posts (title, description, date, author) VALUES ('$title', '$_POST[description]', '$date', '$_SESSION[user]') "; 
+			if(mysqli_query($connect, $insert_sql)) {
 				header('postlist.php'); 
 				} else {
 					$error = '<div class="alert alert-danger"> the query didnt work!</div>'; 
@@ -75,7 +71,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Admin Panel</title>
+		<title>Create Post</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 		<link rel="stylesheet" href="../bootstrap/css/home.css">  
         <script  src= "../js/jquery.js"> </script> 
